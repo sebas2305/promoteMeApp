@@ -25,6 +25,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'rexml'
 gem 'font-awesome-sass', '~> 5.15.1'
+gem 'devise'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
