@@ -1,13 +1,185 @@
-<div class="container-fluid bg-1 text-center">
-  <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Bienvenido a</h1>
-    <%= image_tag("logoPromoteMe.svg", { size: "300x300", alt: "PromoteMe", class: "img-responsive"} ) %>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4"> En esta plataforma encontrarás todo lo que tu y tu empresa necesitan para mejorar la gestión de recursos humanos. Contamos con un equipo bla bla bla asdasdasdadi sadsadsadasdsada adssauausd gasdu had sas.</p>
-      <div class="d-grid gap-2 mt-5 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg mx-3 px-4 gap-3">Ingresar como Empleado</button>
-        <button type="button" class="btn btn-outline-secondary mx-3 btn-lg px-4">Ingresar como Empleador</button>
+<% if signed_in? %>
+  <h2>BIENVENIDO A PROMOTE ME</h2>
+<% else %>
+  <html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Promote.me</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/product/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <div class="container-fluid bg-1 text-center">
+    <div class="px-4 py-5 my-5 text-center">
+      <%= image_tag("negocio.svg", { size: "300x300", alt: "PromoteMe", class: "img-responsive"} ) %>
+      <%= image_tag("logoPromoteMe.svg", { size: "300x300", alt: "PromoteMe", class: "img-responsive"} ) %>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4"> En esta plataforma encontrarás todo lo que tu y tu empresa necesitan para mejorar la gestión de recursos humanos. Contamos con un equipo bla bla bla asdasdasdadi sadsadsadasdsada adssauausd gasdu had sas.</p>
+        <div class="d-grid gap-2 mt-5 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-primary btn-lg mx-3 px-4 gap-3">Solicitar Demo</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="position-relative overflow-hidden p-3 p-md-3 m-md-2 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 font-weight-normal text-primary">Beneficios</h1>
+      <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+    </div>
+    <div class="product-device box-shadow d-none d-md-block"></div>
+    <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+  </div>
+
+  <div class="container marketing pt-5 pb-5">
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <%= image_tag("Alerta.svg", { size: "150x150", alt: "PromoteMe", class: "img-responsive"} ) %>
+        <h2>Rotación de personal</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p><a class="btn btn-primary" href="#" role="button">Ver más »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <%= image_tag("grow2.svg", { size: "150x150", alt: "PromoteMe", class: "img-responsive"} ) %>
+        <h2>Planes de carrera</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p><a class="btn btn-primary" href="#" role="button">Ver más »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <%= image_tag("test2.svg", { size: "150x150", alt: "PromoteMe", class: "img-responsive"} ) %>
+        <h2>Evaluaciones</h2>
+        <p>Donec sed odio dui. Cras justquam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-primary" href="#" role="button">Ver más »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+    <div class="p-lg-4"></div>
+    <hr class="featurette-divider mt-5 pt-5">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Plataforma pensada en la experiencia</h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("devices.svg", { size: "300x300", alt: "PromoteMe", class: "featurette-image img-fluid mx-auto"} ) %>
+      </div>
+    </div>
+
+    <div class="p-lg-4"></div>
+
+    <hr class="featurette-divider mt-5">
+
+    <div class="row featurette mt-4">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Reportes e información<span class="text-muted"> exclusiva y valiosa</span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <%= image_tag("data.svg", { size: "300x300", alt: "PromoteMe", class: "featurette-image img-fluid mx-auto"} ) %>
+      </div>
+    </div>
+
+    <div class="p-lg-4"></div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Conoce los perfiles de tu empresa <span class="text-muted"></span></h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+      </div>
+      <div class="col-md-5">
+        <%= image_tag("hiring.svg", { size: "300x300", alt: "PromoteMe", class: "featurette-image img-fluid mx-auto"} ) %>
+      </div>
+    </div>
+    <div class="p-lg-4"></div>
+    <hr class="featurette-divider">
+    <!-- /END THE FEATURETTES -->
+
+  </div>
+
+
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <%= image_tag("logoPromoteMe.svg", { size: "150x150", alt: "PromoteMe", class: "img-responsive"} ) %>
+        <small class="d-block mb-3 text-muted">© Promote.me 2021</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Cool stuff</a></li>
+          <li><a class="text-muted" href="#">Random feature</a></li>
+          <li><a class="text-muted" href="#">Team feature</a></li>
+          <li><a class="text-muted" href="#">Stuff for developers</a></li>
+          <li><a class="text-muted" href="#">Another one</a></li>
+          <li><a class="text-muted" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Resource</a></li>
+          <li><a class="text-muted" href="#">Resource name</a></li>
+          <li><a class="text-muted" href="#">Another resource</a></li>
+          <li><a class="text-muted" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Business</a></li>
+          <li><a class="text-muted" href="#">Education</a></li>
+          <li><a class="text-muted" href="#">Government</a></li>
+          <li><a class="text-muted" href="#">Gaming</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Team</a></li>
+          <li><a class="text-muted" href="#">Locations</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/vendor/holder.min.js"></script>
+  <script>
+      Holder.addTheme('thumb', {
+          bg: '#55595c',
+          fg: '#eceeef',
+          text: 'Thumbnail'
+      });
+  </script>
+
+
+  </body></html>
+
+<% end %>
+
+
