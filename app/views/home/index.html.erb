@@ -1,5 +1,39 @@
-<% if signed_in? %>
-  <h2>BIENVENIDO A PROMOTE ME</h2>
+<% if current_user %>
+  <div class="jumbotron">
+    <h1 class="display-4 text-primary">Bienvenido a Promote.me</h1>
+    <p class="lead">Con nuestra plataforma podrás gestionar todo lo relacionado con tu plan de crecimiento profesional</p>
+    <hr class="my-4">
+    <p>Descubre todas las funcionalidades que tenemos para ti</p>
+    <p class="lead">
+    </p>
+  </div>
+
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top mt-3" src="assets/test.svg" alt="Card image cap" width="160" height="160">
+      <div class="card-body">
+        <h5 class="card-title">Evaluación emocional</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a href="#" class="btn btn-primary">Iniciar</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top  mt-3" src="assets/hiring.svg" alt="Card image cap" width="160" height="160">
+      <div class="card-body">
+        <h5 class="card-title">DISC</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Iniciar</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top mt-3" src="assets/grow.svg" alt="Card image cap" width="160" height="160">
+      <div class="card-body">
+        <h5 class="card-title">Plan de carrera</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <a href="#" class="btn btn-primary">Iniciar</a>
+      </div>
+    </div>
+  </div>
 <% else %>
   <html lang="en"><head>
     <meta charset="utf-8">
