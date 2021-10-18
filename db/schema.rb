@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_172728) do
+ActiveRecord::Schema.define(version: 2021_10_18_182437) do
+
+  create_table "enviroments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "q1"
+    t.integer "q2"
+    t.integer "q3"
+    t.integer "q4"
+    t.integer "q5"
+    t.integer "q6"
+    t.integer "q7"
+    t.integer "q8"
+    t.integer "q9"
+    t.integer "q10"
+    t.integer "q11"
+    t.integer "q12"
+    t.integer "q13"
+    t.integer "q14"
+    t.integer "q15"
+    t.integer "q16"
+    t.integer "q17"
+    t.integer "q18"
+    t.integer "q19"
+    t.integer "q20"
+    t.integer "q21"
+    t.integer "q22"
+    t.integer "q23"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_enviroments_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,4 +55,5 @@ ActiveRecord::Schema.define(version: 2021_10_12_172728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "enviroments", "users"
 end

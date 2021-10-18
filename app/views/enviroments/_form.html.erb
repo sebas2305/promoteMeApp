@@ -1,0 +1,664 @@
+<%= form_with(model: enviroment) do |form| %>
+  <% if enviroment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(enviroment.errors.count, "error") %> prohibited this enviroment from being saved:</h2>
+
+      <ul>
+        <% enviroment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+        <label>1. ¿Qué tanto recomendarías a un amigo trabajar en esta empresa?</label>
+        </h5>
+        <label class="form-check-label font-italic mr-3">Poco recomendado</label>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 1 , class: 'form-check-input' %>
+          <label class="form-check-label">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 2, class: 'form-check-input' %>
+          <label class="form-check-label">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 3, class: 'form-check-input' %>
+          <label class="form-check-label">3</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 4, class: 'form-check-input' %>
+          <label class="form-check-label">4</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 5, class: 'form-check-input' %>
+          <label class="form-check-label">5</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 6, class: 'form-check-input' %>
+          <label class="form-check-label">6</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 7, class: 'form-check-input' %>
+          <label class="form-check-label">7</label>
+        </div>
+        <label class="form-check-label font-italic ml-3"> Múy recomendado</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>2. Comprendo claramente la estrategia, misión, visión y objetivos de la empresa</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 1 , class: 'form-check-input', id: "inlineRadio1" %>
+          <label class="form-check-label" for="inlineRadio1">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 2, class: 'form-check-input', id: "inlineRadio2" %>
+          <label class="form-check-label" for="inlineRadio2">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 3, class: 'form-check-input', id: "inlineRadio3" %>
+          <label class="form-check-label" for="inlineRadio3">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 4, class: 'form-check-input', id: "inlineRadio4" %>
+          <label class="form-check-label" for="inlineRadio4">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 5, class: 'form-check-input', id: "inlineRadio5" %>
+          <label class="form-check-label" for="inlineRadio5">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>3. Comprendo la relación que existe entre mis funciones y los objetivos y metas de la empresa</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 1 , class: 'form-check-input', id: "inlineRadio6" %>
+          <label class="form-check-label" for="inlineRadio6">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 2, class: 'form-check-input', id: "inlineRadio7" %>
+          <label class="form-check-label" for="inlineRadio7">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 3, class: 'form-check-input', id: "inlineRadio8" %>
+          <label class="form-check-label" for="inlineRadio8">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 4, class: 'form-check-input', id: "inlineRadio9" %>
+          <label class="form-check-label" for="inlineRadio9">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 5, class: 'form-check-input', id: "inlineRadio10" %>
+          <label class="form-check-label" for="inlineRadio10">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>4. Mi supervisor o jefe directo es justo en sus decisiones </label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 1 , class: 'form-check-input', id: "inlineRadio11" %>
+          <label class="form-check-label" for="inlineRadio11">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 2, class: 'form-check-input', id: "inlineRadio12" %>
+          <label class="form-check-label" for="inlineRadio12">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 3, class: 'form-check-input', id: "inlineRadio13" %>
+          <label class="form-check-label" for="inlineRadio13">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 4, class: 'form-check-input', id: "inlineRadio14" %>
+          <label class="form-check-label" for="inlineRadio14">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 5, class: 'form-check-input', id: "inlineRadio15" %>
+          <label class="form-check-label" for="inlineRadio15">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>5. Mi superior inmediato me exhorta a crecer y aprender</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 1 , class: 'form-check-input', id: "inlineRadio16" %>
+          <label class="form-check-label" for="inlineRadio16">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 2, class: 'form-check-input', id: "inlineRadio17" %>
+          <label class="form-check-label" for="inlineRadio17">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 3, class: 'form-check-input', id: "inlineRadio18" %>
+          <label class="form-check-label" for="inlineRadio18">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 4, class: 'form-check-input', id: "inlineRadio19" %>
+          <label class="form-check-label" for="inlineRadio19">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 5, class: 'form-check-input', id: "inlineRadio20" %>
+          <label class="form-check-label" for="inlineRadio20">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>6. Mis compañeros y yo trabajamos juntos de manera efectiva</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 1 , class: 'form-check-input', id: "inlineRadio21" %>
+          <label class="form-check-label" for="inlineRadio21">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 2, class: 'form-check-input', id: "inlineRadio22" %>
+          <label class="form-check-label" for="inlineRadio22">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 3, class: 'form-check-input', id: "inlineRadio23" %>
+          <label class="form-check-label" for="inlineRadio23">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 4, class: 'form-check-input', id: "inlineRadio24" %>
+          <label class="form-check-label" for="inlineRadio24">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 5, class: 'form-check-input', id: "inlineRadio25" %>
+          <label class="form-check-label" for="inlineRadio25">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>7. En mi empresa existe un espíritu de “estamos todos juntos en esto""</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 1 , class: 'form-check-input', id: "inlineRadio26" %>
+          <label class="form-check-label" for="inlineRadio26">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 2, class: 'form-check-input', id: "inlineRadio27" %>
+          <label class="form-check-label" for="inlineRadio27">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 3, class: 'form-check-input', id: "inlineRadio28" %>
+          <label class="form-check-label" for="inlineRadio28">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 4, class: 'form-check-input', id: "inlineRadio29" %>
+          <label class="form-check-label" for="inlineRadio29">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 5, class: 'form-check-input', id: "inlineRadio30" %>
+          <label class="form-check-label" for="inlineRadio30">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>8. Las condiciones físicas de trabajo (iluminación, limpieza, ergonomía, etc.) son óptimas</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 1 , class: 'form-check-input', id: "inlineRadio31" %>
+          <label class="form-check-label" for="inlineRadio31">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 2, class: 'form-check-input', id: "inlineRadio32" %>
+          <label class="form-check-label" for="inlineRadio32">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 3, class: 'form-check-input', id: "inlineRadio33" %>
+          <label class="form-check-label" for="inlineRadio33">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 4, class: 'form-check-input', id: "inlineRadio34" %>
+          <label class="form-check-label" for="inlineRadio34">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 5, class: 'form-check-input', id: "inlineRadio35" %>
+          <label class="form-check-label" for="inlineRadio35">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>9. La empresa me ofrece un lugar adecuado para pasar mi tiempo de descanso (desayuno y almuerzo)</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 1 , class: 'form-check-input', id: "inlineRadio36" %>
+          <label class="form-check-label" for="inlineRadio38">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 2, class: 'form-check-input', id: "inlineRadio37" %>
+          <label class="form-check-label" for="inlineRadio37">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 3, class: 'form-check-input', id: "inlineRadio38" %>
+          <label class="form-check-label" for="inlineRadio38">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 4, class: 'form-check-input', id: "inlineRadio39" %>
+          <label class="form-check-label" for="inlineRadio39">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 5, class: 'form-check-input', id: "inlineRadio40" %>
+          <label class="form-check-label" for="inlineRadio40">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>10. La cantidad de trabajo que tengo está bien en relación con los horarios de trabajo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 1 , class: 'form-check-input', id: "inlineRadio41" %>
+          <label class="form-check-label" for="inlineRadio41">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 2, class: 'form-check-input', id: "inlineRadio42" %>
+          <label class="form-check-label" for="inlineRadio42">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 3, class: 'form-check-input', id: "inlineRadio43" %>
+          <label class="form-check-label" for="inlineRadio43">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 4, class: 'form-check-input', id: "inlineRadio44" %>
+          <label class="form-check-label" for="inlineRadio44">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 5, class: 'form-check-input', id: "inlineRadio45" %>
+          <label class="form-check-label" for="inlineRadio45">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>11. Muchos de los trabajadores de mi empresa (del mismo nivel) sufren de un alto estrés debido a la exigencia de trabajo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 1 , class: 'form-check-input', id: "inlineRadio46" %>
+          <label class="form-check-label" for="inlineRadio48">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 2, class: 'form-check-input', id: "inlineRadio47" %>
+          <label class="form-check-label" for="inlineRadio47">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 3, class: 'form-check-input', id: "inlineRadio48" %>
+          <label class="form-check-label" for="inlineRadio48">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 4, class: 'form-check-input', id: "inlineRadio49" %>
+          <label class="form-check-label" for="inlineRadio49">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 5, class: 'form-check-input', id: "inlineRadio50" %>
+          <label class="form-check-label" for="inlineRadio50">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>12. Me siento muy satisfecho con mi ambiente de trabajo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 1 , class: 'form-check-input', id: "inlineRadio51" %>
+          <label class="form-check-label" for="inlineRadio51">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 2, class: 'form-check-input', id: "inlineRadio52" %>
+          <label class="form-check-label" for="inlineRadio52">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 3, class: 'form-check-input', id: "inlineRadio53" %>
+          <label class="form-check-label" for="inlineRadio53">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 4, class: 'form-check-input', id: "inlineRadio54" %>
+          <label class="form-check-label" for="inlineRadio54">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 5, class: 'form-check-input', id: "inlineRadio55" %>
+          <label class="form-check-label" for="inlineRadio55">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>13. Existe un excelente clima laboral entre las diferentes áreas de la empresa</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q13, 1 , class: 'form-check-input', id: "inlineRadio56" %>
+          <label class="form-check-label" for="inlineRadio56">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q13, 2, class: 'form-check-input', id: "inlineRadio57" %>
+          <label class="form-check-label" for="inlineRadio57">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q13, 3, class: 'form-check-input', id: "inlineRadio58" %>
+          <label class="form-check-label" for="inlineRadio58">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q13, 4, class: 'form-check-input', id: "inlineRadio59" %>
+          <label class="form-check-label" for="inlineRadio59">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q13, 5, class: 'form-check-input', id: "inlineRadio60" %>
+          <label class="form-check-label" for="inlineRadio60">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>14. El salario que recibo responde al trabajo que realizo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q14, 1 , class: 'form-check-input', id: "inlineRadio61" %>
+          <label class="form-check-label" for="inlineRadio61">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q14, 2, class: 'form-check-input', id: "inlineRadio62" %>
+          <label class="form-check-label" for="inlineRadio62">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q14, 3, class: 'form-check-input', id: "inlineRadio63" %>
+          <label class="form-check-label" for="inlineRadio63">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q14, 4, class: 'form-check-input', id: "inlineRadio64" %>
+          <label class="form-check-label" for="inlineRadio64">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q14, 5, class: 'form-check-input', id: "inlineRadio65" %>
+          <label class="form-check-label" for="inlineRadio65">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>15. La compañía tiene beneficios competentes en relación con el mercado</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q15, 1 , class: 'form-check-input', id: "inlineRadio66" %>
+          <label class="form-check-label" for="inlineRadio66">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q15, 2, class: 'form-check-input', id: "inlineRadio67" %>
+          <label class="form-check-label" for="inlineRadio67">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q15, 3, class: 'form-check-input', id: "inlineRadio68" %>
+          <label class="form-check-label" for="inlineRadio68">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q15, 4, class: 'form-check-input', id: "inlineRadio69" %>
+          <label class="form-check-label" for="inlineRadio69">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q15, 5, class: 'form-check-input', id: "inlineRadio70" %>
+          <label class="form-check-label" for="inlineRadio70">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>16. Creo que tengo oportunidades para crecer profesionalmente en esta empresa</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q16, 1 , class: 'form-check-input', id: "inlineRadio71" %>
+          <label class="form-check-label" for="inlineRadio71">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q16, 2, class: 'form-check-input', id: "inlineRadio72" %>
+          <label class="form-check-label" for="inlineRadio72">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q16, 3, class: 'form-check-input', id: "inlineRadio73" %>
+          <label class="form-check-label" for="inlineRadio73">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q16, 4, class: 'form-check-input', id: "inlineRadio74" %>
+          <label class="form-check-label" for="inlineRadio74">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q16, 5, class: 'form-check-input', id: "inlineRadio75" %>
+          <label class="form-check-label" for="inlineRadio75">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>17. La empresa implementa un buen plan de carrera para los empleados</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q17, 1 , class: 'form-check-input', id: "inlineRadio76" %>
+          <label class="form-check-label" for="inlineRadio76">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q17, 2, class: 'form-check-input', id: "inlineRadio77" %>
+          <label class="form-check-label" for="inlineRadio77">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q17, 3, class: 'form-check-input', id: "inlineRadio78" %>
+          <label class="form-check-label" for="inlineRadio78">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q17, 4, class: 'form-check-input', id: "inlineRadio79" %>
+          <label class="form-check-label" for="inlineRadio79">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q17, 5, class: 'form-check-input', id: "inlineRadio80" %>
+          <label class="form-check-label" for="inlineRadio80">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>18. En esta organización valoran mi trabajo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q18, 1 , class: 'form-check-input', id: "inlineRadio81" %>
+          <label class="form-check-label" for="inlineRadio81">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q18, 2, class: 'form-check-input', id: "inlineRadio82" %>
+          <label class="form-check-label" for="inlineRadio82">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q18, 3, class: 'form-check-input', id: "inlineRadio83" %>
+          <label class="form-check-label" for="inlineRadio83">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q18, 4, class: 'form-check-input', id: "inlineRadio84" %>
+          <label class="form-check-label" for="inlineRadio84">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q18, 5, class: 'form-check-input', id: "inlineRadio85" %>
+          <label class="form-check-label" for="inlineRadio85">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>19.Las promociones se realizan de manera objetiva y se basan en el buen desempeño del empleado</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q19, 1 , class: 'form-check-input', id: "inlineRadio86" %>
+          <label class="form-check-label" for="inlineRadio86">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q19, 2, class: 'form-check-input', id: "inlineRadio87" %>
+          <label class="form-check-label" for="inlineRadio87">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q19, 3, class: 'form-check-input', id: "inlineRadio88" %>
+          <label class="form-check-label" for="inlineRadio88">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q19, 4, class: 'form-check-input', id: "inlineRadio89" %>
+          <label class="form-check-label" for="inlineRadio89">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q19, 5, class: 'form-check-input', id: "inlineRadio90" %>
+          <label class="form-check-label" for="inlineRadio90">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>20. Me gusta mi trabajo </label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q20, 1 , class: 'form-check-input', id: "inlineRadio91" %>
+          <label class="form-check-label" for="inlineRadio91">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q20, 2, class: 'form-check-input', id: "inlineRadio92" %>
+          <label class="form-check-label" for="inlineRadio92">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q20, 3, class: 'form-check-input', id: "inlineRadio93" %>
+          <label class="form-check-label" for="inlineRadio93">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q20, 4, class: 'form-check-input', id: "inlineRadio94" %>
+          <label class="form-check-label" for="inlineRadio94">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q20, 5, class: 'form-check-input', id: "inlineRadio95" %>
+          <label class="form-check-label" for="inlineRadio95">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>21. Me siento comprometido para alcanzar las metas establecidas</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q21, 1 , class: 'form-check-input', id: "inlineRadio96" %>
+          <label class="form-check-label" for="inlineRadio96">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q21, 2, class: 'form-check-input', id: "inlineRadio97" %>
+          <label class="form-check-label" for="inlineRadio97">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q21, 3, class: 'form-check-input', id: "inlineRadio98" %>
+          <label class="form-check-label" for="inlineRadio98">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q21, 4, class: 'form-check-input', id: "inlineRadio99" %>
+          <label class="form-check-label" for="inlineRadio99">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q21, 5, class: 'form-check-input', id: "inlineRadio100" %>
+          <label class="form-check-label" for="inlineRadio100">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="float-right mb-5 px-3 align-content-end">
+      <%= form.submit 'Enviar Respuesta', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>
