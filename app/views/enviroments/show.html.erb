@@ -1,124 +1,65 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @enviroment.user_id %>
+  <strong>Usuario:</strong>
+  <%= @enviroment.user.email %>
 </p>
 
 <p>
-  <strong>Q1:</strong>
+  <strong>Net promoted Score (NPS):</strong>
   <%= @enviroment.q1 %>
 </p>
 
-<p>
-  <strong>Q2:</strong>
-  <%= @enviroment.q2 %>
-</p>
+<table class="table bg-white">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">Componente</th>
+    <th scope="col">Puntaje</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Sentido de pertencia</td>
+    <td><%= @enviroment.sentido_pertenencia %></td>
+  </tr>
+  <tr>
+    <td>Relación con jefe</td>
+    <td><%= @enviroment.relacion_jefe %></td>
+  </tr>
+  <tr>
+    <td>Relación con compañeros</td>
+    <td><%= @enviroment.equipo %></td>
+  </tr>
+  <tr>
+    <td>Condiciones físicas</td>
+    <td><%= @enviroment.condiciones %></td>
+  </tr>
+  <tr>
+    <td>Carga laboral</td>
+    <td><%= @enviroment.carga %></td>
+  </tr>
+  <tr>
+    <td>Ambiente de trabajo</td>
+    <td><%= @enviroment.ambiente %></td>
+  </tr>
+  <tr>
+    <td>Compensación</td>
+    <td><%= @enviroment.compensacion %></td>
+  </tr>
+  <tr>
+    <td>Oportunidades de desarrollo</td>
+    <td><%= @enviroment.desarrollo %></td>
+  </tr>
+  <tr>
+    <td>Reconocimiento</td>
+    <td><%= @enviroment.reconocimiento %></td>
+  </tr>
+  <tr>
+    <td>Felicidad en el trabajo</td>
+    <td><%= @enviroment.felicidad %></td>
+  </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Q3:</strong>
-  <%= @enviroment.q3 %>
-</p>
-
-<p>
-  <strong>Q4:</strong>
-  <%= @enviroment.q4 %>
-</p>
-
-<p>
-  <strong>Q5:</strong>
-  <%= @enviroment.q5 %>
-</p>
-
-<p>
-  <strong>Q6:</strong>
-  <%= @enviroment.q6 %>
-</p>
-
-<p>
-  <strong>Q7:</strong>
-  <%= @enviroment.q7 %>
-</p>
-
-<p>
-  <strong>Q8:</strong>
-  <%= @enviroment.q8 %>
-</p>
-
-<p>
-  <strong>Q9:</strong>
-  <%= @enviroment.q9 %>
-</p>
-
-<p>
-  <strong>Q10:</strong>
-  <%= @enviroment.q10 %>
-</p>
-
-<p>
-  <strong>Q11:</strong>
-  <%= @enviroment.q11 %>
-</p>
-
-<p>
-  <strong>Q12:</strong>
-  <%= @enviroment.q12 %>
-</p>
-
-<p>
-  <strong>Q13:</strong>
-  <%= @enviroment.q13 %>
-</p>
-
-<p>
-  <strong>Q14:</strong>
-  <%= @enviroment.q14 %>
-</p>
-
-<p>
-  <strong>Q15:</strong>
-  <%= @enviroment.q15 %>
-</p>
-
-<p>
-  <strong>Q16:</strong>
-  <%= @enviroment.q16 %>
-</p>
-
-<p>
-  <strong>Q17:</strong>
-  <%= @enviroment.q17 %>
-</p>
-
-<p>
-  <strong>Q18:</strong>
-  <%= @enviroment.q18 %>
-</p>
-
-<p>
-  <strong>Q19:</strong>
-  <%= @enviroment.q19 %>
-</p>
-
-<p>
-  <strong>Q20:</strong>
-  <%= @enviroment.q20 %>
-</p>
-
-<p>
-  <strong>Q21:</strong>
-  <%= @enviroment.q21 %>
-</p>
-
-<p>
-  <strong>Q22:</strong>
-  <%= @enviroment.q22 %>
-</p>
-
-<p>
-  <strong>Q23:</strong>
-  <%= @enviroment.q23 %>
-</p>
-
-<%= link_to 'Edit', edit_enviroment_path(@enviroment) %> |
-<%= link_to 'Back', enviroments_path %>
+<%= link_to 'Edit', edit_enviroment_path(@enviroment), class:'btn btn-outline-primary' %> |
+<%= link_to 'Back', enviroments_path, class:'btn btn-outline-primary' %>

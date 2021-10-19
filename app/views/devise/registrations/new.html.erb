@@ -4,10 +4,31 @@
       <%= image_tag("newUser.svg", { size: "400x400", alt: "PromoteMe", class: "featurette-image img-fluid mx-auto"} ) %>
     </div>
     <div class="col-sm ml-4">
-      <h2 class="text-primary">Sign up</h2>
+      <h2 class="text-primary">Registro</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :name, 'Nombre' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.hidden_field :company_id, value: Company.first.id %>
+        </div>
+
+        <div class="field my-3">
+          <%= f.label :sex, 'Sexo' %> <br>
+          <div class="form-check form-check-inline">
+            <%= f.radio_button :sex, 1 , class: 'form-check-input', id: "iradioHombre" %>
+            <label class="form-check-label" for="iradioHombre">Hombre</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= f.radio_button :sex, 0, class: 'form-check-input', id: "iradioMujer" %>
+            <label class="form-check-label"for="iradioMujer">Mujer</label>
+          </div>
+        </div>
 
         <div class="field">
           <%= f.label :email %><br />
