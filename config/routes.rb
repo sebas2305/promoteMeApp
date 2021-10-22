@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mentals
   resources :companies
   resources :enviroments
   devise_for :users

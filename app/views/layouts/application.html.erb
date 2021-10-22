@@ -14,6 +14,7 @@
 
   <% if signed_in? %>
     <div id="wrapper">
+
       <!-- Sidebar -->
       <ul class="sidenav navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
         <!-- Sidebar - Brand -->
@@ -34,14 +35,14 @@
         <li class="nav-item">
           <%= link_to new_enviroment_path, class: "nav-link"  do %>
           <i class="fas fa-address-book"></i>
-          <span>Empleados</span>
+          <span>Evaluación de clima laboral</span>
           <%end%>
         </li>
 
         <li class="nav-item">
-          <%= link_to new_enviroment_path, class: "nav-link"  do %>
+          <%= link_to new_mental_path, class: "nav-link"  do %>
           <i class="fas fa-address-book"></i>
-          <span>Evaluaciones</span>
+          <span>Evaluación de salud mental</span>
           <%end%>
         </li>
 
@@ -56,7 +57,7 @@
         <li class="nav-item text-gray-200">
           <%= link_to new_user_session_path, class: "nav-link"  do %>
           <i class="fas fa-address-book"></i>
-          <span>Cargos críticos</span>
+          <span>Mis resultados</span>
           <%end%>
         </li>
 
@@ -67,7 +68,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <% if signed_in? == false %>
           <!-- Sidebar - Brand -->
@@ -138,7 +139,7 @@
             <%= notice %>
           </div>
         <% end %>
-        <div class="main container-fluid">
+        <div class="main col py-3 container-fluid">
           <%= yield %>
         </div>
       </div>

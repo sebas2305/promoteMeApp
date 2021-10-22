@@ -1,5 +1,5 @@
 <% if current_user %>
-  <div class="jumbotron">
+  <div class="jumbotron bg-light">
     <h1 class="display-4 text-primary text-center">Bienvenido a Promote.me</h1>
     <p class="lead text-center">Con nuestra plataforma podrás gestionar todo lo relacionado con tu plan de crecimiento profesional</p>
     </p>
@@ -45,25 +45,25 @@
   </head>
 
   <body>
-  <div class="container-fluid bg-1 text-center">
-    <div class="px-4 py-5 my-5 text-center">
-      <%= image_tag("negocio.svg", { size: "300x300", alt: "PromoteMe", class: "img-responsive"} ) %>
-      <%= image_tag("logoPromoteMe.svg", { size: "300x300", alt: "PromoteMe", class: "img-responsive"} ) %>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4"> En esta plataforma encontrarás todo lo que tu y tu empresa necesitan para mejorar la gestión de recursos humanos. Contamos con un equipo bla bla bla asdasdasdadi sadsadsadasdsada adssauausd gasdu had sas.</p>
-        <div class="d-grid gap-2 mt-5 d-sm-flex justify-content-sm-center">
-          <button type="button" class="btn btn-primary btn-lg mx-3 px-4 gap-3">Solicitar Demo</button>
+  <div class="container col-xxl-8 px-5 py-4 ">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <%= image_tag("landing.svg", { size: "500x500", alt: "PromoteMe", class: "img-responsive"} ) %>
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 text-primary fw-bold lh-1 mb-3"><b>Promote.me</b> <br>La solución que tu empresa necesita</h1>
+        <p class="lead">En nuestra plataforma encontrarás todo lo necesario para mejorar la gestión de recursos humanos.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 my-4 me-md-2">Solicitar Demo</button>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="position-relative overflow-hidden p-3 p-md-3 m-md-2 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
+  <div class="position-relative overflow-hidden px-3 py-2 p-md-3 m-md-2 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-3">
       <h1 class="display-4 font-weight-normal text-primary">Beneficios</h1>
-      <p class="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+      <p class="lead font-weight-normal">Conoce todos los beneficios que Promote.me trae para ti y tu empresa</p>
     </div>
-    <div class="product-device box-shadow d-none d-md-block"></div>
     <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
   </div>
 
@@ -73,19 +73,19 @@
       <div class="col-lg-4">
         <%= image_tag("Alerta.svg", { size: "150x150", alt: "PromoteMe", class: "img-responsive"} ) %>
         <h2>Rotación de personal</h2>
-        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        <p class="lead">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
         <p><a class="btn btn-primary" href="#" role="button">Ver más »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <%= image_tag("grow2.svg", { size: "150x150", alt: "PromoteMe", class: "img-responsive"} ) %>
         <h2>Planes de carrera</h2>
-        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        <p class="lead">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
         <p><a class="btn btn-primary" href="#" role="button">Ver más »</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <%= image_tag("test2.svg", { size: "150x150", alt: "PromoteMe", class: "img-responsive"} ) %>
         <h2>Evaluaciones</h2>
-        <p>Donec sed odio dui. Cras justquam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p class="lead">Donec sed odio dui. Cras justquam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-primary" href="#" role="button">Ver más »</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->

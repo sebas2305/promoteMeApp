@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mentals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th>Q5</th>
+      <th>Q6</th>
+      <th>Q7</th>
+      <th>Q8</th>
+      <th>Q9</th>
+      <th>Q10</th>
+      <th>Q11</th>
+      <th>Q12</th>
+      <th>Q13</th>
+      <th>Q14</th>
+      <th>Q15</th>
+      <th>Q16</th>
+      <th>Q17</th>
+      <th>Q18</th>
+      <th>Q19</th>
+      <th>Q20</th>
+      <th>Q21</th>
+      <th>Q22</th>
+      <th>Q23</th>
+      <th>Q24</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mentals.each do |mental| %>
+      <tr>
+        <td><%= mental.user_id %></td>
+        <td><%= mental.q1 %></td>
+        <td><%= mental.q2 %></td>
+        <td><%= mental.q3 %></td>
+        <td><%= mental.q4 %></td>
+        <td><%= mental.q5 %></td>
+        <td><%= mental.q6 %></td>
+        <td><%= mental.q7 %></td>
+        <td><%= mental.q8 %></td>
+        <td><%= mental.q9 %></td>
+        <td><%= mental.q10 %></td>
+        <td><%= mental.q11 %></td>
+        <td><%= mental.q12 %></td>
+        <td><%= mental.q13 %></td>
+        <td><%= mental.q14 %></td>
+        <td><%= mental.q15 %></td>
+        <td><%= mental.q16 %></td>
+        <td><%= mental.q17 %></td>
+        <td><%= mental.q18 %></td>
+        <td><%= mental.q19 %></td>
+        <td><%= mental.q20 %></td>
+        <td><%= mental.q21 %></td>
+        <td><%= mental.q22 %></td>
+        <td><%= mental.q23 %></td>
+        <td><%= mental.q24 %></td>
+        <td><%= link_to 'Show', mental %></td>
+        <td><%= link_to 'Edit', edit_mental_path(mental) %></td>
+        <td><%= link_to 'Destroy', mental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mental', new_mental_path %>

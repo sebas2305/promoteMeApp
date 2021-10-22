@@ -1,10 +1,10 @@
-<%= form_with(model: enviroment) do |form| %>
-  <% if enviroment.errors.any? %>
+<%= form_with(model: mental) do |form| %>
+  <% if mental.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(enviroment.errors.count, "error") %> prohibited this enviroment from being saved:</h2>
+      <h2><%= pluralize(mental.errors.count, "error") %> prohibited this mental from being saved:</h2>
 
       <ul>
-        <% enviroment.errors.each do |error| %>
+        <% mental.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -15,42 +15,36 @@
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
   <div class="card my-4">
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>1. ¿Qué tanto recomendarías a un amigo trabajar en esta empresa?</label>
+          <label>1. Presto mucha atención a los sentimientos</label>
         </h5>
-        <label class="form-check-label font-italic mr-3">Poco recomendado</label>
         <div class="form-check form-check-inline">
-          <%= form.radio_button :q1, 5 , class: 'form-check-input' %>
-          <label class="form-check-label">1</label>
+          <%= form.radio_button :q1, 5 , class: 'form-check-input', id: "inlineR1" %>
+          <label class="form-check-label" for="inlineR1">Totalmente de acuerdo</label>
         </div>
         <div class="form-check form-check-inline">
-          <%= form.radio_button :q1, 4, class: 'form-check-input' %>
-          <label class="form-check-label">2</label>
+          <%= form.radio_button :q1, 4, class: 'form-check-input', id: "inlineR2" %>
+          <label class="form-check-label" for="inlineR2">De acuerdo</label>
         </div>
         <div class="form-check form-check-inline">
-          <%= form.radio_button :q1, 3, class: 'form-check-input' %>
-          <label class="form-check-label">3</label>
+          <%= form.radio_button :q1, 3, class: 'form-check-input', id: "inlineR3" %>
+          <label class="form-check-label" for="inlineR3">Ni de acuerdo ni en desacuerdo</label>
         </div>
         <div class="form-check form-check-inline">
-          <%= form.radio_button :q1, 2, class: 'form-check-input' %>
-          <label class="form-check-label">4</label>
+          <%= form.radio_button :q1, 2, class: 'form-check-input', id: "inlineR4" %>
+          <label class="form-check-label" for="inlineR4">En desacuerdo</label>
         </div>
         <div class="form-check form-check-inline">
-          <%= form.radio_button :q1, 1, class: 'form-check-input' %>
-          <label class="form-check-label">5</label>
+          <%= form.radio_button :q1, 1, class: 'form-check-input', id: "inlineR5" %>
+          <label class="form-check-label" for="inlineR5">Totalmente en desacuerdo</label>
         </div>
-        <div class="form-check form-check-inline">
-          <%= form.radio_button :q1, 6, class: 'form-check-input' %>
-          <label class="form-check-label">6</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <%= form.radio_button :q1, 7, class: 'form-check-input' %>
-          <label class="form-check-label">7</label>
-        </div>
-        <label class="form-check-label font-italic ml-3"> Múy recomendado</label>
       </div>
     </div>
   </div>
@@ -59,7 +53,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>2. Comprendo claramente la estrategia, misión, visión y objetivos de la empresa</label>
+          <label>2. Normalmente me preocupo mucho por lo que siento</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q2, 5 , class: 'form-check-input', id: "inlineRadio1" %>
@@ -89,7 +83,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>3. Comprendo la relación que existe entre mis funciones y los objetivos y metas de la empresa</label>
+          <label>3. Normalmente dedico tiempo a pensar en mis emociones</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q3, 5 , class: 'form-check-input', id: "inlineRadio6" %>
@@ -119,7 +113,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>4. Mi supervisor o jefe directo es justo en sus decisiones </label>
+          <label>4. Pienso que merece la pena prestar atención a mis emociones y estado de ánimo  </label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q4, 5 , class: 'form-check-input', id: "inlineRadio11" %>
@@ -149,7 +143,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>5. Mi superior inmediato me exhorta a crecer y aprender</label>
+          <label>5. Dejo que mis sentimientos afecten a mis pensamientos </label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q5, 5 , class: 'form-check-input', id: "inlineRadio16" %>
@@ -179,7 +173,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>6. Mis compañeros y yo trabajamos juntos de manera efectiva</label>
+          <label>6. Pienso en mi estado de ánimo constantemente</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q6, 5 , class: 'form-check-input', id: "inlineRadio21" %>
@@ -209,7 +203,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>7. En mi empresa existe un espíritu de “estamos todos juntos en esto""</label>
+          <label>7. A menudo pienso en mis sentimientos</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q7, 5 , class: 'form-check-input', id: "inlineRadio26" %>
@@ -239,7 +233,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>8. Las condiciones físicas de trabajo (iluminación, limpieza, ergonomía, etc.) son óptimas</label>
+          <label>8. Presto mucha tención a cómo me siento </label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q8, 5 , class: 'form-check-input', id: "inlineRadio31" %>
@@ -269,7 +263,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>9. La empresa me ofrece un lugar adecuado para pasar mi tiempo de descanso (desayuno y almuerzo)</label>
+          <label>9. Tengo claros mis sentimientos</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q9, 5 , class: 'form-check-input', id: "inlineRadio36" %>
@@ -299,7 +293,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>10. La cantidad de trabajo que tengo está bien en relación con los horarios de trabajo</label>
+          <label>10. Frecuentemente puedo definir mis sentimientos</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q10, 5 , class: 'form-check-input', id: "inlineRadio41" %>
@@ -329,7 +323,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>11. Muchos de los trabajadores de mi empresa (del mismo nivel) sufren de un alto estrés debido a la exigencia de trabajo</label>
+          <label>11. Casi siempre sé cómo me siento</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q11, 5 , class: 'form-check-input', id: "inlineRadio46" %>
@@ -359,7 +353,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>12. Me siento muy satisfecho con mi ambiente de trabajo</label>
+          <label>12. Normalmente conozco mis sentimientos sobre las personas</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q12, 5 , class: 'form-check-input', id: "inlineRadio51" %>
@@ -389,7 +383,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>13. Existe un excelente clima laboral entre las diferentes áreas de la empresa</label>
+          <label>13. A menudo me doy cuenta de mis sentimientos diferentes</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q13, 5 , class: 'form-check-input', id: "inlineRadio56" %>
@@ -419,7 +413,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>14. El salario que recibo responde al trabajo que realizo</label>
+          <label>14. Siempre puedo decir cómo me siento</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q14, 5 , class: 'form-check-input', id: "inlineRadio61" %>
@@ -449,7 +443,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>15. La compañía tiene beneficios competentes en relación con el mercado</label>
+          <label>15. A veces puedo decir cuáles son mis emociones</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q15, 5 , class: 'form-check-input', id: "inlineRadio66" %>
@@ -479,7 +473,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>16. Creo que tengo oportunidades para crecer profesionalmente en esta empresa</label>
+          <label>16. Puedo llegar a comprender mis sentimientos</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q16, 5 , class: 'form-check-input', id: "inlineRadio71" %>
@@ -509,7 +503,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>17. La empresa implementa un buen plan de carrera para los empleados</label>
+          <label>17. Aunque a veces me siento triste, suelo tener una visión</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q17, 5 , class: 'form-check-input', id: "inlineRadio76" %>
@@ -539,7 +533,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>18. En esta organización valoran mi trabajo</label>
+          <label>18. Aunque me sienta mal, procuro pensar en cosas agradables</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q18, 5 , class: 'form-check-input', id: "inlineRadio81" %>
@@ -569,7 +563,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>19.Las promociones se realizan de manera objetiva y se basan en el buen desempeño del empleado</label>
+          <label>19. Cuando estoy triste, pienso en todos los placeres de la vida</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q19, 5 , class: 'form-check-input', id: "inlineRadio86" %>
@@ -599,7 +593,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>20. Me gusta mi trabajo </label>
+          <label>20. Intento tener pensamientos positivos aunque me sienta mal </label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q20, 5 , class: 'form-check-input', id: "inlineRadio91" %>
@@ -629,7 +623,7 @@
     <div class="card-body">
       <div class="form-group">
         <h5 class="card-title text-primary">
-          <label>21. Me siento comprometido para alcanzar las metas establecidas</label>
+          <label>21. Si doy demasiadas vueltas a las cosas, complicándolas, trato de calmarme</label>
         </h5>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q21, 5 , class: 'form-check-input', id: "inlineRadio96" %>
@@ -649,6 +643,96 @@
         </div>
         <div class="form-check form-check-inline">
           <%= form.radio_button :q21, 1, class: 'form-check-input', id: "inlineRadio100" %>
+          <label class="form-check-label" for="inlineRadio100">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>22. Me preocupo por tener un buen estado de ánimo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q22, 5 , class: 'form-check-input', id: "inlineRadio196" %>
+          <label class="form-check-label" for="inlineRadio196">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q22, 4, class: 'form-check-input', id: "inlineRadio197" %>
+          <label class="form-check-label" for="inlineRadio197">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q22, 3, class: 'form-check-input', id: "inlineRadio198" %>
+          <label class="form-check-label" for="inlineRadio198">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q22, 2, class: 'form-check-input', id: "inlineRadio99" %>
+          <label class="form-check-label" for="inlineRadio99">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q22, 1, class: 'form-check-input', id: "inlineRadio100" %>
+          <label class="form-check-label" for="inlineRadio100">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>23. Tengo mucha energía cuando me siento feliz</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q23, 5 , class: 'form-check-input', id: "inlineRadio296" %>
+          <label class="form-check-label" for="inlineRadio296">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q23, 4, class: 'form-check-input', id: "inlineRadio297" %>
+          <label class="form-check-label" for="inlineRadio297">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q23, 3, class: 'form-check-input', id: "inlineRadio298" %>
+          <label class="form-check-label" for="inlineRadio298">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q23, 2, class: 'form-check-input', id: "inlineRadio299" %>
+          <label class="form-check-label" for="inlineRadio299">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q23, 1, class: 'form-check-input', id: "inlineRadio1200" %>
+          <label class="form-check-label" for="inlineRadio1200">Totalmente en desacuerdo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-4">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>24. Cuando estoy enfadado intento cambiar mi estado de ánimo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q24, 5 , class: 'form-check-input', id: "inlineRadi96" %>
+          <label class="form-check-label" for="inlineRadi96">Totalmente de acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q24, 4, class: 'form-check-input', id: "inlineRadi97" %>
+          <label class="form-check-label" for="inlineRadi97">De acuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q24, 3, class: 'form-check-input', id: "inlineRadi98" %>
+          <label class="form-check-label" for="inlineRadi98">Ni de acuerdo ni en desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q24, 2, class: 'form-check-input', id: "inlineRadi99" %>
+          <label class="form-check-label" for="inlineRadi99">En desacuerdo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q24, 1, class: 'form-check-input', id: "inlineRadio100" %>
           <label class="form-check-label" for="inlineRadio100">Totalmente en desacuerdo</label>
         </div>
       </div>
