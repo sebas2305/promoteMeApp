@@ -1,0 +1,436 @@
+<%= form_with(model: laboral) do |form| %>
+  <% if laboral.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(laboral.errors.count, "error") %> prohibited this laboral from being saved:</h2>
+
+      <ul>
+        <% laboral.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>1. Imposibilidad de conciliar el sueño</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 6 , class: 'form-check-input', id: "inlineR61" %>
+          <label class="form-check-label" for="inlineR61">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 5 , class: 'form-check-input', id: "inlineR1" %>
+          <label class="form-check-label" for="inlineR1">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 4, class: 'form-check-input', id: "inlineR2" %>
+          <label class="form-check-label" for="inlineR2">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 3, class: 'form-check-input', id: "inlineR3" %>
+          <label class="form-check-label" for="inlineR3">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 2, class: 'form-check-input', id: "inlineR4" %>
+          <label class="form-check-label" for="inlineR4">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q1, 1, class: 'form-check-input', id: "inlineR5" %>
+          <label class="form-check-label" for="inlineR5">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>2. Jaquecas y dolores de cabeza</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 6 , class: 'form-check-input', id: "inlineRadio222" %>
+          <label class="form-check-label" for="inlineRadio222">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 5 , class: 'form-check-input', id: "inlineRadio1" %>
+          <label class="form-check-label" for="inlineRadio1">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 4, class: 'form-check-input', id: "inlineRadio2" %>
+          <label class="form-check-label" for="inlineRadio2">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 3, class: 'form-check-input', id: "inlineRadio3" %>
+          <label class="form-check-label" for="inlineRadio3">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 2, class: 'form-check-input', id: "inlineRadio4" %>
+          <label class="form-check-label" for="inlineRadio4">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q2, 1, class: 'form-check-input', id: "inlineRadio5" %>
+          <label class="form-check-label" for="inlineRadio5">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>3. Indigestiones o molestias gastrointestinales</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 6 , class: 'form-check-input', id: "inlineRadio666" %>
+          <label class="form-check-label" for="inlineRadio666">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 5 , class: 'form-check-input', id: "inlineRadio6" %>
+          <label class="form-check-label" for="inlineRadio6">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 4, class: 'form-check-input', id: "inlineRadio7" %>
+          <label class="form-check-label" for="inlineRadio7">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 3, class: 'form-check-input', id: "inlineRadio8" %>
+          <label class="form-check-label" for="inlineRadio8">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 2, class: 'form-check-input', id: "inlineRadio9" %>
+          <label class="form-check-label" for="inlineRadio9">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q3, 1, class: 'form-check-input', id: "inlineRadio10" %>
+          <label class="form-check-label" for="inlineRadio10">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>4. Sensación de cansancio externo o agotamiento  </label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 6 , class: 'form-check-input', id: "inlineRadio611" %>
+          <label class="form-check-label" for="inlineRadio611">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 5 , class: 'form-check-input', id: "inlineRadio11" %>
+          <label class="form-check-label" for="inlineRadio11">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 4, class: 'form-check-input', id: "inlineRadio12" %>
+          <label class="form-check-label" for="inlineRadio12">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 3, class: 'form-check-input', id: "inlineRadio13" %>
+          <label class="form-check-label" for="inlineRadio13">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 2, class: 'form-check-input', id: "inlineRadio14" %>
+          <label class="form-check-label" for="inlineRadio14">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q4, 1, class: 'form-check-input', id: "inlineRadio15" %>
+          <label class="form-check-label" for="inlineRadio15">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>5. Tendencia de comer, beber o fumar más de lo habitual </label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 6 , class: 'form-check-input', id: "inlineRadio616" %>
+          <label class="form-check-label" for="inlineRadio616">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 5 , class: 'form-check-input', id: "inlineRadio16" %>
+          <label class="form-check-label" for="inlineRadio16">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 4, class: 'form-check-input', id: "inlineRadio17" %>
+          <label class="form-check-label" for="inlineRadio17">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 3, class: 'form-check-input', id: "inlineRadio18" %>
+          <label class="form-check-label" for="inlineRadio18">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 2, class: 'form-check-input', id: "inlineRadio19" %>
+          <label class="form-check-label" for="inlineRadio19">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q5, 1, class: 'form-check-input', id: "inlineRadio20" %>
+          <label class="form-check-label" for="inlineRadio20">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>6. Disminución del interés social</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 6 , class: 'form-check-input', id: "inlineRadio621" %>
+          <label class="form-check-label" for="inlineRadio621">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 5 , class: 'form-check-input', id: "inlineRadio21" %>
+          <label class="form-check-label" for="inlineRadio21">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 4, class: 'form-check-input', id: "inlineRadio22" %>
+          <label class="form-check-label" for="inlineRadio22">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 3, class: 'form-check-input', id: "inlineRadio23" %>
+          <label class="form-check-label" for="inlineRadio23">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 2, class: 'form-check-input', id: "inlineRadio24" %>
+          <label class="form-check-label" for="inlineRadio24">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q6, 1, class: 'form-check-input', id: "inlineRadio25" %>
+          <label class="form-check-label" for="inlineRadio25">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>7. Respiración entrecortada o sensación de ahogo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 6 , class: 'form-check-input', id: "inlineRadio626" %>
+          <label class="form-check-label" for="inlineRadio626">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 5 , class: 'form-check-input', id: "inlineRadio26" %>
+          <label class="form-check-label" for="inlineRadio26">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 4, class: 'form-check-input', id: "inlineRadio27" %>
+          <label class="form-check-label" for="inlineRadio27">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 3, class: 'form-check-input', id: "inlineRadio28" %>
+          <label class="form-check-label" for="inlineRadio28">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 2, class: 'form-check-input', id: "inlineRadio29" %>
+          <label class="form-check-label" for="inlineRadio29">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q7, 1, class: 'form-check-input', id: "inlineRadio30" %>
+          <label class="form-check-label" for="inlineRadio30">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>8. Disminución del apetito </label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 6 , class: 'form-check-input', id: "inlineRadio631" %>
+          <label class="form-check-label" for="inlineRadio631">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 5 , class: 'form-check-input', id: "inlineRadio31" %>
+          <label class="form-check-label" for="inlineRadio31">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 4, class: 'form-check-input', id: "inlineRadio32" %>
+          <label class="form-check-label" for="inlineRadio32">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 3, class: 'form-check-input', id: "inlineRadio33" %>
+          <label class="form-check-label" for="inlineRadio33">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 2, class: 'form-check-input', id: "inlineRadio34" %>
+          <label class="form-check-label" for="inlineRadio34">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q8, 1, class: 'form-check-input', id: "inlineRadio35" %>
+          <label class="form-check-label" for="inlineRadio35">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>9. Temblores musculares (por ejemplo tics nerviosos o parpadeos)</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 6 , class: 'form-check-input', id: "inlineRadio636" %>
+          <label class="form-check-label" for="inlineRadio638">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 5 , class: 'form-check-input', id: "inlineRadio36" %>
+          <label class="form-check-label" for="inlineRadio36">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 4, class: 'form-check-input', id: "inlineRadio37" %>
+          <label class="form-check-label" for="inlineRadio37">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 3, class: 'form-check-input', id: "inlineRadio38" %>
+          <label class="form-check-label" for="inlineRadio38">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 2, class: 'form-check-input', id: "inlineRadio39" %>
+          <label class="form-check-label" for="inlineRadio39">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q9, 1, class: 'form-check-input', id: "inlineRadio40" %>
+          <label class="form-check-label" for="inlineRadio40">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>10. Pinchazos o sensaciones dolorosas en distintas partes del cuerpo</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 6 , class: 'form-check-input', id: "inlineRadio641" %>
+          <label class="form-check-label" for="inlineRadio641">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 5 , class: 'form-check-input', id: "inlineRadio41" %>
+          <label class="form-check-label" for="inlineRadio41">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 4, class: 'form-check-input', id: "inlineRadio42" %>
+          <label class="form-check-label" for="inlineRadio42">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 3, class: 'form-check-input', id: "inlineRadio43" %>
+          <label class="form-check-label" for="inlineRadio43">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 2, class: 'form-check-input', id: "inlineRadio44" %>
+          <label class="form-check-label" for="inlineRadio44">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q10, 1, class: 'form-check-input', id: "inlineRadio45" %>
+          <label class="form-check-label" for="inlineRadio45">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>11. Tentaciones fuertes de no levantarse por la mañana</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 6 , class: 'form-check-input', id: "inlineRadio646" %>
+          <label class="form-check-label" for="inlineRadio646">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 5 , class: 'form-check-input', id: "inlineRadio46" %>
+          <label class="form-check-label" for="inlineRadio46">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 4, class: 'form-check-input', id: "inlineRadio47" %>
+          <label class="form-check-label" for="inlineRadio47">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 3, class: 'form-check-input', id: "inlineRadio48" %>
+          <label class="form-check-label" for="inlineRadio48">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 2, class: 'form-check-input', id: "inlineRadio49" %>
+          <label class="form-check-label" for="inlineRadio49">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q11, 1, class: 'form-check-input', id: "inlineRadio50" %>
+          <label class="form-check-label" for="inlineRadio50">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="form-group">
+        <h5 class="card-title text-primary">
+          <label>12. Tendencias a sudar o palpitaciones</label>
+        </h5>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 6 , class: 'form-check-input', id: "inlineRadio651" %>
+          <label class="form-check-label" for="inlineRadio651">Muy frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 5 , class: 'form-check-input', id: "inlineRadio51" %>
+          <label class="form-check-label" for="inlineRadio51">Relativamente frecuente</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 4, class: 'form-check-input', id: "inlineRadio52" %>
+          <label class="form-check-label" for="inlineRadio52">Algunas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 3, class: 'form-check-input', id: "inlineRadio53" %>
+          <label class="form-check-label" for="inlineRadio53">Pocas veces</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 2, class: 'form-check-input', id: "inlineRadio54" %>
+          <label class="form-check-label" for="inlineRadio54">Casi nunca</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <%= form.radio_button :q12, 1, class: 'form-check-input', id: "inlineRadio55" %>
+          <label class="form-check-label" for="inlineRadio55">Nunca</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="float-right mb-5 px-3 align-content-end">
+      <%= form.submit 'Enviar Respuesta', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+
+<% end %>

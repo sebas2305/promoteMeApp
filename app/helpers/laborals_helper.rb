@@ -1,0 +1,2 @@
+module LaboralsHelper
+end

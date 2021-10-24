@@ -1,0 +1,45 @@
+<ul class="sidenav navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+  <!-- Sidebar - Brand -->
+  <%= link_to root_path, class: "sidebar-brand d-flex align-items-center justify-content-center"  do %>
+    <div class="sidebar-brand-text mx-3"> <%= image_tag("logoPromoteMe-white.svg", { size: "200x200", alt: "PromoteMe", class: "img-responsive"} ) %></div>
+  <%end%>
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+  <hr class="sidebar-divider">
+  <%= image_tag("perfil.jpg", { size: "50x50", alt: "PromoteMe", class: "featurette-image img-fluid mx-auto rounded-circle my-2"} ) %>
+  <div class="font-weight-bold text-gray-200 text-center">
+    <%= current_user.name %>
+  </div>
+  <p class="font-italic text-center text-gray-200">Rol: Administrador</p>
+
+  <hr class="sidebar-divider mt-3">
+
+  <li class="nav-item text-gray-200">
+    <%= link_to results_path, class: "nav-link"  do %>
+      <i class="fas fa-chart-pie"></i>
+      <span>Resultados corporativos</span>
+    <%end%>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to climalaboral_path, class: "nav-link"  do %>
+      <i class="fas fa-smile-beam fa-3x"></i>
+      <span>Clima laboral</span>
+    <%end%>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to saludemocional_path, class: "nav-link"  do %>
+      <i class="fas fa-brain"></i>
+      <span>Salud emocional</span>
+    <%end%>
+  </li>
+
+    <li class="nav-item text-gray-200">
+      <%= link_to new_enviroment_path, class: "nav-link"  do %>
+        <i class="fas fa-address-book"></i>
+        <span>Cargos críticos</span></a>
+      <%end%>
+    </li>
+</ul>
+<!-- End of Sidebar -->

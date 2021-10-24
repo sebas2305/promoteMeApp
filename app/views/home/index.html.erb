@@ -1,35 +1,56 @@
 <% if current_user %>
-  <div class="jumbotron bg-light">
-    <h1 class="display-4 text-primary text-center">Bienvenido a Promote.me</h1>
-    <p class="lead text-center">Con nuestra plataforma podrás gestionar todo lo relacionado con tu plan de crecimiento profesional</p>
-    </p>
-  </div>
+   <% if current_user.admin %>
+    <!-- Background image -->
+    <div
+      class="text-center bg-image mb-4"
+      style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+        height: 204px;">
+      <div class="mask p-5" style="background-color: rgba(56,56,56,0.41);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <h1 class="mb-3">¡Hola <%= current_user.name %>!</h1>
+            <h4 class="mb-3">Descubre todas las funcionales que tenemos para tu empresa</h4>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top mt-3" src="assets/test.svg" alt="Card image cap" width="160" height="160">
-      <div class="card-body">
-        <h5 class="card-title">Evaluación emocional</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <a href="#" class="btn btn-primary">Iniciar</a>
+ <% else %> <!-- Background image -->
+  <div
+    class="text-center bg-image mb-4"
+    style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+      height: 204px;">
+    <div class="mask p-5" style="background-color: rgba(0,22,255,0.41);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">¡Hola <%= current_user.name %>!</h1>
+          <h4 class="mb-3">Descubre todas las funcionales que tenemos para ti</h4>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <img class="card-img-top  mt-3" src="assets/hiring.svg" alt="Card image cap" width="160" height="160">
+  </div>
+<%end%>
+
+  <div class="card-deck mt-5">
+    <%= link_to results_path, class: "card cardsS"  do %>
+        <img class="card-img-top mt-3" src="assets/hiring.svg" alt="Card image cap" width="160" height="160">
+        <div class="card-body">
+          <h5 class="card-title text-primary text-center">Mis resultados</h5>
+        </div>
+    <%end%>
+    <%= link_to climalaboral_path, class: "card cardsS"  do %>
+      <img class="card-img-top  mt-3" src="assets/celebrate.svg" alt="Card image cap" width="160" height="160">
       <div class="card-body">
-        <h5 class="card-title">DISC</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Iniciar</a>
+        <h5 class="card-title text-primary text-center">Clima laboral</h5>
       </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top mt-3" src="assets/grow.svg" alt="Card image cap" width="160" height="160">
+    <%end%>
+
+    <%= link_to saludemocional_path, class: "card cardsS"  do %>
+      <img class="card-img-top mt-3" src="assets/medicine.svg" alt="Card image cap" width="160" height="160">
       <div class="card-body">
-        <h5 class="card-title">Plan de carrera</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        <a href="#" class="btn btn-primary">Iniciar</a>
+        <h5 class="card-title text-primary text-center">Salud emocional</h5>
       </div>
-    </div>
+    <%end%>
   </div>
 <% else %>
   <html lang="en"><head>

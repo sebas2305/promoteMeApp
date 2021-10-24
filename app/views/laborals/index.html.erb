@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Laborals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th>Q5</th>
+      <th>Q6</th>
+      <th>Q7</th>
+      <th>Q8</th>
+      <th>Q9</th>
+      <th>Q10</th>
+      <th>Q11</th>
+      <th>Q12</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @laborals.each do |laboral| %>
+      <tr>
+        <td><%= laboral.user_id %></td>
+        <td><%= laboral.q1 %></td>
+        <td><%= laboral.q2 %></td>
+        <td><%= laboral.q3 %></td>
+        <td><%= laboral.q4 %></td>
+        <td><%= laboral.q5 %></td>
+        <td><%= laboral.q6 %></td>
+        <td><%= laboral.q7 %></td>
+        <td><%= laboral.q8 %></td>
+        <td><%= laboral.q9 %></td>
+        <td><%= laboral.q10 %></td>
+        <td><%= laboral.q11 %></td>
+        <td><%= laboral.q12 %></td>
+        <td><%= link_to 'Show', laboral %></td>
+        <td><%= link_to 'Edit', edit_laboral_path(laboral) %></td>
+        <td><%= link_to 'Destroy', laboral, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Laboral', new_laboral_path %>

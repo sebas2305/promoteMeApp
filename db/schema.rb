@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_22_092606) do
+ActiveRecord::Schema.define(version: 2021_10_23_221102) do
 
   create_table "companies", force: :cascade do |t|
     t.string "nit"
@@ -48,6 +48,25 @@ ActiveRecord::Schema.define(version: 2021_10_22_092606) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_enviroments_on_user_id"
+  end
+
+  create_table "laborals", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "q1"
+    t.integer "q2"
+    t.integer "q3"
+    t.integer "q4"
+    t.integer "q5"
+    t.integer "q6"
+    t.integer "q7"
+    t.integer "q8"
+    t.integer "q9"
+    t.integer "q10"
+    t.integer "q11"
+    t.integer "q12"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_laborals_on_user_id"
   end
 
   create_table "mentals", force: :cascade do |t|
@@ -99,6 +118,7 @@ ActiveRecord::Schema.define(version: 2021_10_22_092606) do
   end
 
   add_foreign_key "enviroments", "users"
+  add_foreign_key "laborals", "users"
   add_foreign_key "mentals", "users"
   add_foreign_key "users", "companies"
 end

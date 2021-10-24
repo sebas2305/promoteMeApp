@@ -60,6 +60,9 @@
   </tr>
   </tbody>
 </table>
-
+<% if current_user.admin  %>
 <%= link_to 'Edit', edit_enviroment_path(@enviroment), class:'btn btn-outline-primary' %> |
 <%= link_to 'Back', enviroments_path, class:'btn btn-outline-primary' %>
+<% end %>
+
+<%= link_to 'Volver', results_path, class:'btn btn-outline-primary' %>

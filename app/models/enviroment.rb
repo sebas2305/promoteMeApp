@@ -58,6 +58,8 @@ class Enviroment < ApplicationRecord
     else
       "Muy bajo"
     end
-
   end
+
+
+
 end

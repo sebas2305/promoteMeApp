@@ -18,3 +18,9 @@
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
 
+.cardsS:hover {
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  transform: scale(1.05);
+  border-color: rgba(0, 0, 255, 0.41);
+  text-decoration: none;
+}
