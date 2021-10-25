@@ -12,7 +12,7 @@ class Laboral < ApplicationRecord
     elsif resultadoNumerico > 12 and resultadoNumerico < 37
       "Estrés leve. Te encuentras en fase de alarma, trata de identificar el o los factores que te causan estrés para poder ocupartee de ellos de manera preventiva"
     elsif resultadoNumerico > 36 and resultadoNumerico < 49
-      "Estrés medio. Haz conciencia de la situación en la que te encuentras y trata de ubicar qué puedes modificar, ya que si la situación estresante se prolonga, puedes romper tu equilibrio entre lo laboral y lo personal. No agotes tus resistencias."
+      "Estrés medio. Haz conciencia de la situación en la que te encuentras y trata de ubicar qué puedes modificar, si la situación estresante se prolonga, puedes romper tu equilibrio entre lo laboral y lo personal. No agotes tus resistencias."
     elsif resultadoNumerico > 49 and resultadoNumerico < 60
       "Estrés alto. Te encuentras en una fase de agotamiento de recursos fisiológicos con desgaste físico y mental. Esto puede tener consecuencias más serias para tu salud."
     else

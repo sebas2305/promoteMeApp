@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get "/saludemocional" => "survey#index"
   get "/climalaboral" => "menu#index"
   get "/results" => "results#index"
+  get "/cresults" => "cresults#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

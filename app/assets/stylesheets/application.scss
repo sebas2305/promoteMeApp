@@ -24,3 +24,8 @@
   border-color: rgba(0, 0, 255, 0.41);
   text-decoration: none;
 }
+
+.imgBlack{
+  -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(70%);
+}

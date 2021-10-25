@@ -52,8 +52,9 @@
     <div class="card-body text-center">
       <h5 class="card-title text-primary">Estabilidad emocional</h5>
       <%if Mental.find_by_user_id(current_user.id) != nil %>
-        <p class="card-text font-weight-bold">Puntaje obtenido: <%= Mental.find_by_user_id(current_user.id).resultadoNumerico %> </p>
-        <p class="card-text"><%= Mental.find_by_user_id(current_user.id).resultado %></p>
+        <p class="card-text"> <b>Percepción:</b> <%= Mental.find_by_user_id(current_user.id).resultadoPercepcionTextoH %> </p>
+        <p class="card-text"><b>Comprensión:</b> <%= Mental.find_by_user_id(current_user.id).resultadoComprensionTextoH %> </p>
+        <p class="card-text"><b>Regulación:</b> <%= Mental.find_by_user_id(current_user.id).resultadoRegulacionTextoH %> </p>
       <%else %>
         <h5 class="card-text">Aún no completaste la encuesta :( </h5>
       <% end %>
@@ -65,8 +66,8 @@
       <h5 class="card-title text-primary">Clima laboral</h5>
       <%if Enviroment.find_by_user_id(current_user.id) != nil %>
         <p class="card-text font-weight-bold">Puntaje obtenido: <%= Enviroment.find_by_user_id(current_user.id).resultadoNumerico %> </p>
+        <p class="card-text"> <b>Riesgo de renuncia: </b><%= Enviroment.find_by_user_id(current_user.id).resultado %></p>
         <p class="card-text font-weight-bold">NPS: <%= Enviroment.find_by_user_id(current_user.id).q1 %> </p>
-        <p class="card-text"><%= Enviroment.find_by_user_id(current_user.id).resultado %></p>
         <%= link_to 'Ver detalles', Enviroment.find_by_user_id(current_user.id), class:'btn btn-outline-primary' %>
       <%else %>
         <h5 class="card-text">Aún no completaste la encuesta :( </h5>

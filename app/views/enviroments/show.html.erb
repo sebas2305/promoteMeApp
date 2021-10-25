@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
+<h1 class="text-center text-primary">Resultado clima laboral - Evaluación individual </h1>
 
-<p>
-  <strong>Usuario:</strong>
-  <%= @enviroment.user.email %>
-</p>
-
-<p>
-  <strong>Net promoted Score (NPS):</strong>
-  <%= @enviroment.q1 %>
-</p>
+<div class="card my-4">
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col" class="text-primary">ID</th>
+        <th scope="col" class="text-primary">Nombre</th>
+        <th scope="col" class="text-primary">Email</th>
+        <th scope="col" class="text-primary">NPS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th ><%= @enviroment.user.id  %></th>
+        <td><%= @enviroment.user.name %></td>
+        <td><%= @enviroment.user.email %></td>
+        <td><%= @enviroment.q1 %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <table class="table bg-white">
   <thead class="thead-light">
