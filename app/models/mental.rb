@@ -57,7 +57,7 @@ class Mental < ApplicationRecord
 
   def resultadoRegulacionTextoH
     if resultadoComprension < 23
-      "Debes mejorar tu percepción, prestas poca atención a los detalles"
+      "Debes mejorar tu regulación, prestas poca atención a los detalles"
     elsif resultadoComprension > 24 and resultadoComprension < 35
       "Percepción Adecuada para tu perfil"
     else
