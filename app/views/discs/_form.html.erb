@@ -1,0 +1,1444 @@
+<%= form_with(model: disc) do |form| %>
+  <% if disc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(disc.errors.count, "error") %> prohibited this disc from being saved:</h2>
+
+      <ul>
+        <% disc.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">1</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Entusiasta</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q1, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q1n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Rápido</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q1, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q1n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Lógico</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q1, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q1n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Apacible</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q1, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q1n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">2</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Cauteloso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q2, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q2n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Decidido</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q2, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q2n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Receptivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q2, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q2n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Bondadoso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q2, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q2n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">3</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Amigable</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q3, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q3n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Preciso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q3, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q3n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Franco</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q3, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q3n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Tranquilo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q3, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q3n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">4</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Elocuente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q4, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q4n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Controlado</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q4, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q4n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Tolerante</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q4, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q4n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Decisivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q4, 1 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q4n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<hr class="bg-primary my-2">
+  <div class="row">
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">5</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Atrevido</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q5, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q5n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Concienzudo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q5, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q5n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Comunicativo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q5, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q5n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Moderado</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q5, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q5n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">6</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Ameno</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q6, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q6n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Ingenioso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q6, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q6n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Investigador</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q6, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q6n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Acepta riesgos</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q6, 1 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q6n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">7</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Expresivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q7, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q7n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Cuidadoso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q7, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q7n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Dominante</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q7, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q7n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Sensible</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q7, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q7n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">8</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Extrovertido</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q8, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q8n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Precavido</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q8, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q8n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Constante</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q8, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q8n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Impaciente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q8, 1 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q8n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr class="bg-primary my-2">
+  <div class="row">
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">9</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Discreto</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q9, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q9n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Complaciente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q9, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q9n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Encantador</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q9, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q9n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Insistente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q9, 1 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q9n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">10</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Valeroso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q10, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q10n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Anima a los demás</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q10, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q10n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Pacífico</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q10, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q10n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Perfeccionista</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q10, 4 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q10n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">11</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Reservado</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q11, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q11n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Atento</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q11, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q11n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Osado</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q11, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q11n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Alegre</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q11, 2 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q11n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">12</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Estimulante</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q12, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q12n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Gentil</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q12, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q12n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Perceptivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q12, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q12n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Independiente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q12, 1 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q12n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr class="bg-primary my-2">
+  <div class="row">
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">13</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Competitivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q13, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q13n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Considerado</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q13, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q13n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Alegre</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q13, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q13n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Sagaz</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q13, 4 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q13n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">14</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Meticuloso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q14, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q14n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Obediente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q14, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q14n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Ideas firmes</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q14, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q14n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Alentador</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q14, 2 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q14n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">15</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Popular</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q15, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q15n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Reflexivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q15, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q15n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Tenaz</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q15, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q15n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td> Calmado</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q15, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q15n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">16</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Analítico</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q16, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q16n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Audaz</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q16, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q16n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Leal</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q16, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q16n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Promotor</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q16, 2 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q16n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr class="bg-primary my-2">
+  <div class="row">
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">17</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Socialble</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q17, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q17n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Paciente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q17, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q17n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Auto suficiente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q17, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q17n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Certero</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q17, 4 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q17n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">18</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Adaptable</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q18, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q18n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Resuelto</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q18, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q18n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Prevenido</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q18, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q18n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Vivaz</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q18, 2 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q18n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">19</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Agresivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q19, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q19n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Impetuoso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q19, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q19n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Amistoso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q19, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q19n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Discerniente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q19, 4 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q19n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">20</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>De trato fácil</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q20, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q20n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Comprensivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q20, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q20n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Cauto</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q20, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q20n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Habla directo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q20, 1 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q20n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr class="bg-primary my-2">
+  <div class="row">
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">21</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Evaluador</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q21, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q21n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Generoso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q21, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q21n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Animado</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q21, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q21n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Persistente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q21, 1 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q21n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">22</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Impulsivo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q22, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q22n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Cuida de los detalles</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q22, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q22n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Enérgico</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q22, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q22n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Tranquilo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q22, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q22n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">23</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Sociable</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q23, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q23n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Sistemático</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q23, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q23n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Vigoroso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q23, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q23n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Tolerante</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q23, 2 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q23n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">24</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Cautivador</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q24, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q24n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Contento</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q24, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q24n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Exigente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q24, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q24n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Apegado a las normas</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q24, 4 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q24n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr class="bg-primary my-2">
+  <div class="row">
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">25</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Le agrada discutir</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q25, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q25n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Metódico</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q25, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q25n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Comedido</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q25, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q25n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Desenvuelto</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q25, 2 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q25n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">26</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Jovial</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q26, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q26n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Preciso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q26, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q26n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Directo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q26, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q26n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Ecuánime</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q26, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q26n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">27</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Inquieto</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q27, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q27n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Amable</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q27, 3 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q27n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Elocuente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q27, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q27n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Cuidadoso</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q27, 4 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q27n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <table class="table bg-white table-bordered">
+        <thead>
+        <tr>
+          <th scope="col" class="text-primary font-weight-bold text-center">28</th>
+          <th scope="col">Más</th>
+          <th scope="col">Menos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Prudente</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q28, 4 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q28n, 4 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Pionero</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q28, 1 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q28n, 1 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Espontáneo</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q28, 2 , class: 'form-check-input', id: "inlineR1" %>
+            <label class="form-check-label" for="flexRadioDefault1">
+            </label>
+          </div></td>
+          <td><%= form.radio_button :q28n, 2 , class: 'form-check-input ml-3', id: "inlineR1" %>
+            <label class="form-check-label" for="option1"></label></td>
+        </tr>
+        <tr>
+          <td>Colaborador</td>
+          <td><div class="form-check">
+            <%= form.radio_button :q28, 3 , class: 'form-check-input', id: "inlineR1" %>
+          </div></td>
+          <td><%= form.radio_button :q28n, 3 , class: 'form-check-input ml-3', id: "inlineR1" %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr class="bg-primary my-2">
+  <div class="container-fluid">
+    <div class="float-right mb-5 px-3 align-content-end">
+      <%= form.submit 'Enviar Respuesta', :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

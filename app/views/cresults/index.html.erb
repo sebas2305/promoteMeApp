@@ -1,18 +1,35 @@
+<div class="jumbotron bg-light">
+  <h1 class="display-5 text-secondary text-center"> <i class="fas fa-smile-beam"></i> Resultados corporativos</h1>
+  <p class="lead text-center"> Encuentra la información de los empleados de <%=current_user.company.name %></p>
+  </p>
+</div>
+
+<div class="card-body">
+  <h5 class="card-title text-primary text-center">Número de empleados registrados <br> <%= User.count %></h5>
+</div>
+<%= line_chart User.group_by_day(:created_at).count %>
+<div class="my-5">
+  <h1 class="display-5 text-secondary "> Salud emocional</h1>
+  <%= column_chart Mental.group_by_day_of_week(:created_at, format: "%a").count %>
+</div>
+
+
 <div class="card-deck mt-5">
-  <%= link_to results_path, class: "card cardsS imgBlack"  do %>
+
+  <%= link_to results_path, class: "card cardsS"  do %>
     <img class="card-img-top mt-3" src="assets/hiring.svg" alt="Card image cap" width="160" height="160">
     <div class="card-body">
       <h5 class="card-title text-primary text-center">Resultado generales</h5>
     </div>
   <%end%>
-  <%= link_to enviroments_path, class: "card cardsS imgBlack"  do %>
+  <%= link_to enviroments_path, class: "card cardsS"  do %>
     <img class="card-img-top  mt-3" src="assets/celebrate.svg" alt="Card image cap" width="160" height="160">
     <div class="card-body">
       <h5 class="card-title text-primary text-center">Resultados Clima laboral</h5>
     </div>
   <%end%>
 
-  <%= link_to mentals_path, class: "card cardsS imgBlack"  do %>
+  <%= link_to mentals_path, class: "card cardsS"  do %>
     <img class="card-img-top mt-3" src="assets/medicine.svg" alt="Card image cap" width="160" height="160">
     <div class="card-body">
       <h5 class="card-title text-primary text-center"> Resultados Salud emocional</h5>

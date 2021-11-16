@@ -26,6 +26,8 @@ gem 'jquery-rails'
 gem 'rexml'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'devise'
+gem "chartkick"
+gem 'groupdate'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

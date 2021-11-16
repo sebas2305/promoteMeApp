@@ -1,0 +1,2 @@
+json.extract! disc, :id, :user_id, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10, :q11, :q12, :q13, :q14, :q15, :q16, :q17, :q18, :q19, :q20, :q21, :q22, :q23, :q24, :q25, :q26, :q27, :q28, :q1n, :q2n, :q3n, :q4n, :q5n, :q6n, :q7n, :q8n, :q9n, :q10n, :q11n, :q12n, :q13n, :q14n, :q15n, :q16n, :q17n, :q18n, :q19n, :q20n, :q21n, :q22n, :q23n, :q24n, :q25n, :q26n, :q27n, :q28n, :created_at, :updated_at
+json.url disc_url(disc, format: :json)
