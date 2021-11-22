@@ -4,14 +4,126 @@
   </p>
 </div>
 
-<div class="card-body">
-  <h5 class="card-title text-primary text-center">Número de empleados registrados <br> <%= User.count %></h5>
+<div class="card my-4">
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col" class="text-primary">Nombre</th>
+        <th scope="col" class="text-primary">Rol</th>
+        <th scope="col" class="text-primary">Empresa</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= current_user.name %></td>
+          <td>Administrador</td>
+        <td><%= current_user.company.name %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<%= line_chart User.group_by_day(:created_at).count %>
-<div class="my-5">
-  <h1 class="display-5 text-secondary "> Salud emocional</h1>
-  <%= column_chart Mental.group_by_day_of_week(:created_at, format: "%a").count %>
+
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body text-center">
+      <h5 class="card-title text-primary text-center">Número de empleados registrados</h5>
+
+      <h4 class="font-weight-bolder"> <%= User.count %></h4>
+      <div class="float-right px-2 align-content-end">
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body text-center">
+      <h5 class="card-title text-primary">Evaluaciones realizadas</h5>
+      <h4 class="card-text font-weight-bolder"> 7 </h4>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body text-center">
+      <h5 class="card-title text-primary">Plan vigente hasta: </h5>
+        <h5 class="card-text">17/06/2022</h5>
+    </div>
+  </div>
 </div>
+
+<div class="card-deck my-3">
+  <div class="card">
+    <img class="card-img-top mt-3" src="assets/meditation.svg" alt="Card image cap" width="100" height="100">
+    <div class="card-body text-center">
+      <h5 class="card-title text-primary">Estrés Laboral</h5>
+        <h6 class="card-text text-danger">Tu compañía no cuenta con un buen manejo del estrés internamente</h6>
+      <div class="float-right px-2 align-content-end">
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top  mt-3" src="assets/medicine.svg" alt="Card image cap" width="100" height="100">
+    <div class="card-body text-center">
+      <h5 class="card-title text-primary">Estabilidad emocional</h5>
+        <h6 class="card-text text-success"> "No se evidencia desequilibrio emocional importante entre tus colaboradores" </h6>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top mt-3" src="assets/celebrate.svg" alt="Card image cap" width="100" height="100">
+    <div class="card-body text-center">
+      <h5 class="card-title text-primary">Clima laboral</h5>
+        <h6 class="card-text text-warning">Aún no completaste la encuesta :( </h6>
+    </div>
+  </div>
+</div>
+
+<div class="card my-4">
+  <div class="card-body">
+    <h5 class="card-title text-primary text-center">Resultado DISC</h5>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col" class="text-primary">Letra dominante</th>
+        <th scope="col" class="text-primary">Descripción</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <%if Disc.find_by_user_id(current_user.id) != nil %>
+          <th ><%= Disc.find_by_user_id(current_user.id).resultado_disc %></th>
+          <td><%= Disc.find_by_user_id(current_user.id).resultado_final %></td>
+        <%else %>
+          <th >C</th>
+          <td>En tu organización no hay una letra dominante para caracterizar la población de tus colaboradores. Sin embargo la que mayoría tiende a ser complaciente</td>
+        <% end %>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+      <div class="my-3">
+        <% data = [['Dominante', 1],
+                   ['Influyente',     1],
+                   ['Seguro',     0],
+                   ['Complaciente',  2]] %>
+
+        <%= pie_chart data, library: { pieSliceText: 'value' } %>
+    </div>
+  </div>
+</div>
+
+<div class="card my-4">
+  <div class="card-body">
+    <h5 class="card-title text-primary text-center">Actividad de la plataforma en los últimos días</h5>
+<div class="row">
+  <div class="col">
+    <%= line_chart User.group_by_day(:created_at).count %>
+  </div>
+
+</div>
+  </div>
+</div>
+
+
 
 
 <div class="card-deck mt-5">
@@ -36,3 +148,4 @@
     </div>
   <%end%>
 </div>
+

@@ -75,3 +75,40 @@
     </div>
   </div>
 </div>
+
+<div class="card my-4">
+  <div class="card-body">
+    <h5 class="card-title text-primary text-center">Resultado DISC</h5>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col" class="text-primary">Letra dominante</th>
+        <th scope="col" class="text-primary">Descripción</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <%if Disc.find_by_user_id(current_user.id) != nil %>
+        <th ><%= Disc.find_by_user_id(current_user.id).resultado_disc %></th>
+        <td><%= Disc.find_by_user_id(current_user.id).resultado_final %></td>
+        <%else %>
+          <th >"N/A"</th>
+          <td>"Aún no realizas el DISC, dirigete al menú y realiza la encuesta para obtener tus resultados"</td>
+        <% end %>
+      </tr>
+      </tbody>
+    </table>
+<br>
+    <%if Disc.find_by_user_id(current_user.id) != nil %>
+    <div class="my-3">
+      <% data = [['Dominante', Disc.find_by_user_id(current_user.id).contar_d],
+                 ['Influyente',     Disc.find_by_user_id(current_user.id).contar_i],
+                 ['Seguro',     Disc.find_by_user_id(current_user.id).contar_s],
+                 ['Complaciente',  Disc.find_by_user_id(current_user.id).contar_c]] %>
+
+
+      <%= column_chart data, library: { pieSliceText: 'value' } %>
+      <%end %>
+    </div>
+  </div>
+</div>
